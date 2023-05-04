@@ -1,0 +1,33 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Roles {
+  AUTHOR
+  USER
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  login    String @db.VarChar()
+  password String @db.VarChar()
+  role     Roles  @default(USER)
+
+  posts Post[]
+}
+
+model Post {
+  id      Int      @id @default(autoincrement())
+  title   String
+  date    DateTime @default(now())
+  content Json     @db.Json
+
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
+}

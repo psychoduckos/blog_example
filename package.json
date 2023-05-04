@@ -1,0 +1,36 @@
+{
+  "name": "blog_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psychoduckos/blog_example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psychoduckos/blog_example/issues"
+  },
+  "homepage": "https://github.com/psychoduckos/blog_example#readme",
+  "devDependencies": {
+    "@prisma/client": "^4.13.0",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.1",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "prisma": "^4.13.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
